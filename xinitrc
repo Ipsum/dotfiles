@@ -1,0 +1,17 @@
+[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
+#Set dpi
+xrandr --dpi 210
+#screen lock after 3 sec
+xautolock -time 3 -locker slock &
+#xset -dpms
+#xset s off
+
+#Middle mouse scroll
+xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation" 1
+xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Button" 2
+xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Timeout" 200
+xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Axes" 6 7 4 5
+xinput set-prop "TPPS/2 IBM TrackPoint" "Device Accel Constant Deceleration" 0.75
+
+exec statusbar&
+exec urxvt& dwm
